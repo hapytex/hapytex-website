@@ -1,0 +1,40 @@
+name: Deploy site
+on:
+  push:
+  schedule:
+    - cron: '47 4 * * 4'
+
+jobs:
+  linux1:
+    name: Build site
+    runs-on: ubuntu-latest
+    steps:
+    - name: update package database
+      run: sudo apt-get update
+    - name: install required packages
+      run: sudo apt-get install pandoc php php-curl minify yui-compressor
+    - name: checkout code
+      uses: actions/checkout@v2.3.1
+    - name: build the site
+      run: make
+
+  linux2:
+    name: Deploy website
+    runs-on: ubuntu-latest
+    needs: [linux1]
+    if: github.ref == 'refs/heads/master'
+    steps:
+    - name: update package database
+      run: sudo apt-get update
+    - name: install required packages
+      run: sudo apt-get install minify pandoc php php-curl yui-compressor
+    - name: checkout code
+      uses: actions/checkout@v2.3.1
+    - name: build the site
+      run: make
+    - name: deploy site to gh-pages
+      uses: JamesIves/github-pages-deploy-action@4.0.0
+      with:
+        branch: gh-pages
+        folder: out_
+        single-commit: true
