@@ -21,6 +21,9 @@ out_/%.css: static/%.css
 out_/%.html: static/%.html
 	minify --type 'html' --html-keep-document-tags < "$<" > "$@" || ln -f "$<" "$@"
 
+out_/%.svg: static/%.svg
+	minify --type 'svg' < "$<" > "$@" || ln -f "$<" "$@"
+
 out_/sitemap.xml:
 	git clone https://github.com/knyzorg/Sitemap-Generator-Crawler.git sitemap_
 	php sitemap_/sitemap.php file="$@" site=https://www.hapytex.eu

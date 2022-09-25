@@ -2,7 +2,7 @@ body {
   background-color: #35495f;
   color: #e9c012;
 }
-div.copy {
+span.copy {
   cursor: copy;
 }
 div.logo {
