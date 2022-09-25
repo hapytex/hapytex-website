@@ -1,11 +1,13 @@
 jss = $(shell ls static/*.js)
 csss = $(shell ls static/*.css)
-html = $(shell ls static/*.html)
+htmls = $(shell ls static/*.html)
+svgs = $(shell ls static/*.svg)
 outjss = $(jss:static/%=out_/%)
 outcsss = $(csss:static/%=out_/%)
-outhtmls = $(html:static/%=out_/%)
+outhtmls = $(htmls:static/%=out_/%)
+outsvgs = $(svgs:static/%=out_/%)
 
-all: out_ out_/CNAME $(outjss) $(outcsss) $(outhtmls)
+all: out_ out_/CNAME $(outjss) $(outcsss) $(outhtmls) $(outsvgs)
 
 out_ :
 	mkdir -p out_
@@ -16,7 +18,7 @@ out_/%.js: static/%.js
 out_/%.css: static/%.css
 	yui-compressor --type css "$<" >"$@" || ln -f "$<" "$@"
 
-out/%.html: static/%.html
+out_/%.html: static/%.html
 	minify --type 'html' --html-keep-document-tags < "$<" > "$@" || ln -f "$<" "$@"
 
 out_/sitemap.xml:
