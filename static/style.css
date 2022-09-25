@@ -2,6 +2,9 @@ body {
   background-color: #35495f;
   color: #e9c012;
 }
+div.copy {
+  cursor: copy;
+}
 div.logo {
   margin: 0;
   position: absolute;
