@@ -9,6 +9,19 @@ span.copy {
   background-color: #333;
   padding: 1.25rem;
   border-radius: .5rem;
+  font-family: monospace;
+}
+span.copy:after {
+    content: "\f0c5";
+    margin-left: 0.25cm;
+    font-family: "Font Awesome 6 Free";
+}
+span.copy.clicked:after {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  opacity: 0;
 }
 div.logo {
   margin: 0;
