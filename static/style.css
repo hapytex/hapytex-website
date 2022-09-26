@@ -4,6 +4,11 @@ body {
 }
 span.copy {
   cursor: copy;
+  margin-bottom: 0;
+  color: #ccc;
+  background-color: #333;
+  padding: 1.25rem;
+  border-radius: .5rem;
 }
 div.logo {
   margin: 0;
