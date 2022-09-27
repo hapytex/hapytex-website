@@ -16,12 +16,17 @@ span.copy:after {
     margin-left: 0.25cm;
     font-family: "Font Awesome 6 Free";
 }
-span.copy.clicked:after {
+span.copy span {
+  position: relative;
+  top: 0px;
+}
+span.copy.copied span {
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
   opacity: 0;
+  top: -25px;
 }
 div.logo {
   margin: 0;

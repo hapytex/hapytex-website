@@ -1,8 +1,12 @@
 $(function () {
-  $('span.copy').click(function () {
+  const copy = $('span.copy');
+  copy.html(function (_, html) {return $('<span>').html(html);});
+  copy.click(function () {
     navigator.clipboard.writeText(this.textContent);
     const item = $(this);
-    item.addClass('clicked');
-    setTimeout(function () {item.removeClass('clicked');}, 500);
+    item.addClass('copied');
+    setTimeout(function () {item.removeClass('copied');}, 500);
+    // item.addClass('clicked');
+    // setTimeout(function () {item.removeClass('clicked');}, 500);
   });
 });
