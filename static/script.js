@@ -1,4 +1,5 @@
 $(function () {
+  $('.mail').html(function (_, html) {return html + "@" + window.location.hostname;});
   const copy = $('span.copy');
   copy.html(function (_, html) {return $('<span>').html(html);});
   copy.click(function () {
