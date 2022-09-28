@@ -1,5 +1,5 @@
 $(function () {
-  $('.mail').html(function (_, html) {return html + "@" + window.location.hostname;});
+  $('.mail').html(function (_, html) {return html + "@" + window.location.hostname.replace(/^www./, '');});
   const copy = $('span.copy');
   copy.html(function (_, html) {return $('<span>').html(html);});
   copy.click(function () {
