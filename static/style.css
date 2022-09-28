@@ -7,8 +7,8 @@ span.copy {
   margin-bottom: 0;
   color: #ccc;
   background-color: #333;
-  padding: 1.25rem;
-  border-radius: .5rem;
+  padding: 0.75rem;
+  border-radius: .25rem;
   font-family: monospace;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
