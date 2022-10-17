@@ -2,7 +2,7 @@ body {
   background-color: #35495f;
   color: #e9c012;
 }
-span.copy {
+span.well {
   cursor: copy;
   margin-bottom: 0;
   color: #ccc;
@@ -33,6 +33,11 @@ span.copy.copied span {
   transition: all 0.5s ease;
   opacity: 0;
   top: -25px;
+}
+span.mail:after {
+    content: "\f0e0";
+    margin-left: 0.25cm;
+    font-family: "Font Awesome 6 Free";
 }
 div.logo {
   margin: 0;
