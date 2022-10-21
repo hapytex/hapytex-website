@@ -4,8 +4,10 @@ body {
 }
 mark {
   background: url(//s2.svgbox.net/pen-brushes.svg?ic=brush-1&color=ff0000);
-  margin: -2px -6px;
-  padding:  2px  6px;
+  color: #e9c012;
+  font-weight: bold;
+  /* margin: -2px -6px; */
+  /* padding:  2px  6px; */
 }
 span.well {
   cursor: copy;
