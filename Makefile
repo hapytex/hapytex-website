@@ -8,6 +8,14 @@ outhtmls = $(htmls:static/%=out_/%)
 outsvgs = $(svgs:static/%=out_/%)
 
 all: out_ out_/CNAME $(outjss) $(outcsss) $(outhtmls) $(outsvgs)
+	cp -r out_/* /var/www/hapytex/
+
+install: /var/www/hapytex/
+
+/var/www/hapytex/:
+	sudo mkdir -p /var/www/hapytex
+	sudo chown :www-data /var/www/hapytex/
+	sudo sudo chmod o+rwx /var/www/hapytex/
 
 out_ :
 	mkdir -p out_
