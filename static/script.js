@@ -3,13 +3,13 @@ $(function () {
   emailjs.init('1U0dhCkXoZqW3N_vS');
   function send_mail(form) {
     $('.envelope-side-borders').data('opened', false);
+    $('.envelope-side-borders').removeClass('open');
     const msg = form.elements['message'].value.trim();
     if(msg) {
         emailjs.send("service_he4xtq9","template_3fhqju7",{
             message: msg,
         });
     }
-    $('.envelope-side-borders').removeClass('open');
     form.reset();
   }
   mail.html(function (_, html) {return html + "@" + window.location.hostname.replace(/^www./, '');});
