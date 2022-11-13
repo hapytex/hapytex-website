@@ -1,10 +1,24 @@
 $(function () {
   const mail = $('.mail');
+  emailjs.init('1U0dhCkXoZqW3N_vS');
+  function send_mail(form) {
+    emailjs.send("service_he4xtq9","template_3fhqju7",{
+        message: form.elements['message'].value,
+    });
+    $('.envelope-side-borders').removeClass('open');
+    form.reset();
+  }
   mail.html(function (_, html) {return html + "@" + window.location.hostname.replace(/^www./, '');});
   mail.click(function() {
     const env = $('.envelope-side-borders');
-    env.toggleClass('open');
-    env.find('textarea').focus();
+    if(env.data('opened')) {
+      env.data('opened', false);
+      send_mail($('.envelope form')[0]);
+    } else {
+      env.addClass('open');
+      env.data('opened', true);
+      env.find('textarea').focus();
+    }
   });
   const copy = $('span.copy');
   copy.html(function (_, html) {return $('<span>').html(html);});
@@ -16,4 +30,6 @@ $(function () {
     // item.addClass('clicked');
     // setTimeout(function () {item.removeClass('clicked');}, 500);
   });
+  $('.envelope textarea').keydown(function (e) {if ((e.ctrlKey || e.metaKey) && (e.keyCode == 13 || e.keyCode == 10)) {send_mail(this.form);}});
+  $('.envelope form').submit(function () {send_mail(this.form);});
 });

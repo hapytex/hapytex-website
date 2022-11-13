@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/regular.min.css" integrity="sha512-aNH2ILn88yXgp/1dcFPt2/EkSNc03f9HBFX0rqX3Kw37+vjipi1pK3L9W08TZLhMg4Slk810sPLdJlNIjwygFw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel=stylesheet href="/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.slim.min.js" integrity="sha512-yBpuflZmP5lwMzZ03hiCLzA94N0K2vgBtJgqQ2E1meJzmIBfjbb7k4Y23k2i2c/rIeSUGc7jojyIY5waK3ZxCQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="/script.js"></script>
     <title>HaPyTe&Chi; - Consultancy in Haskell, Python and Te&Chi;</title>
   </head>
@@ -29,7 +30,7 @@
           <!--Through cyber <!-- fr
         </div>
         <div class="address">&nbsp;</div>-->
-        <textarea spellcheck placeholder="Write message&hellip;"></textarea>
+        <form onsubmit="event.preventDefault();"><textarea name="message" spellcheck placeholder="Write message&hellip;&#13;&#10;Please include contact info."></textarea></form>
         </div>
       </div>
     </div>

@@ -50,6 +50,8 @@ mark {
   -moz-box-shadow: none;
   box-shadow: none;
   resize: none;
+  caret: #41ff00 block;
+  font: 1.3rem Inconsolata, monospace;
 }
 
 .envelope-side-borders:before, .envelope-side-borders:after {
@@ -114,7 +116,11 @@ span.well {
   cursor: copy;
   margin-bottom: 0;
   color: #ccc;
-  background-color: #333;
+  color: #41ff00;
+  text-shadow: 0 0 3px #41ff00;
+  background: #5c58b6;
+  box-shadow: 5px #5c58b6;
+  /*background-color: #333; */
   padding: 0.75rem;
   border-radius: .25rem;
   font-family: monospace;
