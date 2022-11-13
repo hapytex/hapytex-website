@@ -2,6 +2,7 @@ $(function () {
   const mail = $('.mail');
   emailjs.init('1U0dhCkXoZqW3N_vS');
   function send_mail(form) {
+    $('.envelope-side-borders').data('opened', false);
     emailjs.send("service_he4xtq9","template_3fhqju7",{
         message: form.elements['message'].value,
     });
@@ -12,7 +13,6 @@ $(function () {
   mail.click(function() {
     const env = $('.envelope-side-borders');
     if(env.data('opened')) {
-      env.data('opened', false);
       send_mail($('.envelope form')[0]);
     } else {
       env.addClass('open');
