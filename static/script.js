@@ -8,9 +8,9 @@ $(function () {
         emailjs.send("service_he4xtq9","template_3fhqju7",{
             message: msg,
         });
-        $('.envelope-side-borders').removeClass('open');
-        form.reset();
     }
+    $('.envelope-side-borders').removeClass('open');
+    form.reset();
   }
   mail.html(function (_, html) {return html + "@" + window.location.hostname.replace(/^www./, '');});
   mail.click(function() {
