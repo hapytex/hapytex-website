@@ -3,12 +3,112 @@ body {
   color: #e9c012;
 }
 mark {
-  background: #000;
-  background: url(//s2.svgbox.net/pen-brushes.svg?ic=brush-1&color=000);
-  color: #e9c012;
+  background: transparent;
+  text-shadow: 0 0 5px #5c58b6;
+  /* box-shadow: 0px 0px 3px 3px #5c58b6; */
+  /* background: #000;
+  background: url(//s2.svgbox.net/pen-brushes.svg?ic=brush-1&color=000); */
+  color: #5994ce;
   font-weight: bold;
   /* margin: -2px -6px; */
   /* padding:  2px  6px; */
+}
+.inner-envelope {
+  padding: 6px;
+  width: 588px;
+  height: 288px;
+}
+.envelope-side-borders:before, .envelope-side-borders:after, .envelope:before, .envelope:after {
+  content: '';
+  background-image: 
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0px,
+      transparent 15px,
+      #b957ce /* #3498db */ 15px, 
+      #b957ce /* #3498db */ 30px,
+      transparent 30px,
+      transparent 45px,
+      #5994ce /* #e74c3c */ 45px,
+      #5994ce /* #e74c3c */ 60px
+    );
+  position: absolute;
+}
+
+.envelope .inner-envelope textarea {
+  width: 578px;
+  height: 278px;
+  margin: 1px;
+  padding: 4px;
+  background: transparent;
+  color: #41ff00;
+  text-shadow: 0 0 3px #41ff00;
+  border: none;
+  overflow: auto;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  resize: none;
+}
+
+.envelope-side-borders:before, .envelope-side-borders:after {
+  border-radius: 0px 0px 10px 10px;
+  width: 100%;
+  height: 6px;
+  top: 0px;
+}
+.envelope-side-borders:before {
+  left: 6px;
+  transform-origin: 0 0;
+  transform: rotate(90deg);
+}
+.envelope-side-borders:after {
+  right: 6px;
+  transform-origin: 100% 0;
+  transform: rotate(-90deg);
+}
+.envelope-side-borders {
+  /*display: none;*/
+  position: absolute;
+  left: -800px;
+  width: 600px;
+  height: 300px;
+  background: #5c58b6;
+  box-shadow: 0px 0px 40px 20px #5c58b6;
+  color: black;
+  overflow: hidden;
+  margin: 25vh auto;
+  transform: rotate(-5deg);
+  transition: all 0.5s ease-in-out;
+}
+.envelope-side-borders.open {
+  left: 100px;
+  /*display: inherit;*/
+}
+.envelope {
+  /*background: url("https://www.toptal.com/designers/subtlepatterns/patterns/ricepaper.png"); */
+  /* filter: sepia(25%); */
+  font-family: 'American Typewriter', 'Cutive', serif;
+  border-radius: 10px;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  box-shadow: 0px 15px 30px;
+}
+.envelope:before, .envelope:after {
+  width: 100%;
+  height: 8px;
+  position: absolute;
+  z-index: -2;
+}
+.envelope:before {
+  border-radius: 10px 10px 0 0;
+  top: 0px;
+}
+.envelope:after {
+  border-radius: 0px 0px 10px 10px;
+  bottom: 0px;
 }
 span.well {
   cursor: copy;
@@ -55,4 +155,5 @@ div.logo {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
+  z-index: -100;
 }

@@ -1,5 +1,11 @@
 $(function () {
-  $('.mail').html(function (_, html) {return html + "@" + window.location.hostname.replace(/^www./, '');});
+  const mail = $('.mail');
+  mail.html(function (_, html) {return html + "@" + window.location.hostname.replace(/^www./, '');});
+  mail.click(function() {
+    const env = $('.envelope-side-borders');
+    env.toggleClass('open');
+    env.find('textarea').focus();
+  });
   const copy = $('span.copy');
   copy.html(function (_, html) {return $('<span>').html(html);});
   copy.click(function () {
