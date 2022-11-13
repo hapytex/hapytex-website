@@ -8,7 +8,6 @@ outhtmls = $(htmls:static/%=out_/%)
 outsvgs = $(svgs:static/%=out_/%)
 
 all: out_ out_/CNAME $(outjss) $(outcsss) $(outhtmls) $(outsvgs)
-	ln -f cdn/* out_/
 	cp -r out_/* /var/www/hapytex/
 
 install: /var/www/hapytex/
