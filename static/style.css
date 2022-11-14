@@ -35,13 +35,20 @@ mark {
   position: absolute;
 }
 
-.envelope .inner-envelope textarea {
+.inner-envelope textarea {
   width: 578px;
   height: 278px;
   margin: 1px;
   padding: 4px;
-  background: transparent;
-  color: #41ff00;
+  background-size: 100%;
+  /*background: transparent;*/
+  background-image: repeating-linear-gradient(
+      0deg,
+      #09a500,
+      #09a500 1px,
+      #41ff00 1px,
+      #41ff00 4px
+  );
   text-shadow: 0 0 3px #41ff00;
   border: none;
   overflow: auto;
@@ -52,6 +59,19 @@ mark {
   resize: none;
   caret: #41ff00 block;
   font: 1.3rem Inconsolata, monospace;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+}
+.inner-envelope textarea::selection {
+  background: #41ff00;
+  text-shadow: none;
+  color: #ffffff;
+  -webkit-background-clip: initial;
+  -moz-background-clip: initial;
+  -webkit-text-fill-color: white; 
+  -moz-text-fill-color: white;
 }
 
 .envelope-side-borders:before, .envelope-side-borders:after {
