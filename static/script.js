@@ -8,7 +8,7 @@ $(function () {
     const msg = form.elements['message'].value.trim();
     if(msg) {
         const match = msg.match(emailRegex);
-        emailjs.send("service_he4xtq9","template_3fhqju7",{
+        emailjs.send("service_bgcm91o","template_3fhqju7",{
             message: msg,
             from: (match || '')[0]
         });
