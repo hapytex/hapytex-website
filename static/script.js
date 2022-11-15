@@ -1,4 +1,5 @@
 $(function () {
+  const emailRegex = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
   const mail = $('.mail');
   emailjs.init('1U0dhCkXoZqW3N_vS');
   function send_mail(form) {
@@ -6,8 +7,10 @@ $(function () {
     $('.envelope-side-borders').removeClass('open');
     const msg = form.elements['message'].value.trim();
     if(msg) {
+        const match = msg.match(emailRegex);
         emailjs.send("service_he4xtq9","template_3fhqju7",{
             message: msg,
+            from: (match || '')[0]
         });
     }
     form.reset();
