@@ -35,6 +35,9 @@ mark {
   position: absolute;
 }
 
+div.mailer {
+  position: relative;
+}
 .inner-envelope textarea {
   width: 578px;
   height: 278px;
@@ -63,6 +66,7 @@ mark {
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent; 
   -moz-text-fill-color: transparent;
+  box-sizing: border-box;
 }
 .inner-envelope textarea::selection {
   background: #41ff00;
@@ -217,4 +221,31 @@ div.logo {
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
+}
+button.sendemail {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: none;
+  cursor:pointer;
+}
+button.sendemail:disabled {
+  color: #b957ce;
+  text-shadow: 0 0 5px #b957ce;
+}
+button.sendemail {
+  text-shadow: 0 0 5px #5994ce;
+  color: #5994ce;
+}
+button.sendemail:enabled:hover {
+  color: #41ff00;
+  text-shadow: 0 0 5px #41ff00;
+}
+button.sendemail::after {
+  content: "\f1d8";
+  font-family: "Font Awesome 6 Free";
+  font-size: 32px;
 }

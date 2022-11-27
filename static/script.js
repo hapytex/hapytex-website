@@ -34,8 +34,9 @@ $(function () {
     item.addClass('copied');
     setTimeout(function () {item.removeClass('copied');}, 500);
     // item.addClass('clicked');
-    // setTimeout(function () {item.removeClass('clicked');}, 500);
+    // setTimeout(function () {item.removeClass('clicked);}, 500);
   });
   $('.envelope textarea').keydown(function (e) {if ((e.ctrlKey || e.metaKey) && (e.keyCode == 13 || e.keyCode == 10)) {send_mail(this.form);}});
-  $('.envelope form').submit(function () {send_mail(this.form);});
+  $('.envelope textarea').on('input', function (e) {$('.envelope button').prop('disabled', this.value.length <= 0);});
+  $('.envelope form').submit(function () {send_mail(this);});
 });
