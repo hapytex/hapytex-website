@@ -235,12 +235,13 @@ button.sendemail {
 button.sendemail:disabled {
   color: #b957ce;
   text-shadow: 0 0 5px #b957ce;
+  cursor: not-allowed;
 }
 button.sendemail {
   text-shadow: 0 0 5px #5994ce;
   color: #5994ce;
 }
-button.sendemail:enabled:hover {
+button.sendemail:enabled:hover, button.sendemail:enabled:focus {
   color: #41ff00;
   text-shadow: 0 0 5px #41ff00;
 }
