@@ -14,6 +14,7 @@ $(function () {
         });
     }
     form.reset();
+    $('.envelope button').prop('disabled', true);
   }
   mail.html(function (_, html) {return html + "@" + window.location.hostname.replace(/^www./, '');});
   mail.click(function() {
