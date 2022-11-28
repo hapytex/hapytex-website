@@ -232,6 +232,7 @@ button.sendemail {
   border: none;
   background: none;
   cursor:pointer;
+  transition: color 0.5s ease-in-out, text-shadow 0.5s ease-in-out;
 }
 button.sendemail:disabled {
   color: #b957ce;
