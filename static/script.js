@@ -16,7 +16,7 @@ $(function () {
         });
     }
     form.reset();
-    $('.envelope button').prop('disabled', true);
+    $('button.sendemail').prop('disabled', true);
   }
   mail.html(function (_, html) {return html + "@" + window.location.hostname.replace(/^www./, '');});
   function toggle_mail() {
@@ -41,6 +41,7 @@ $(function () {
     // setTimeout(function () {item.removeClass('clicked);}, 500);
   });
   $('.envelope textarea').keydown(function (e) {if ((e.ctrlKey || e.metaKey) && (e.keyCode == 13 || e.keyCode == 10)) {send_mail(this.form);} else if(e.keyCode == 27) {close_mail();}});
-  $('.envelope textarea').on('input', function (e) {$('.envelope button').prop('disabled', this.value.length <= 0);});
+  $('button.closemail').click(close_mail);
+  $('.envelope textarea').on('input', function (e) {$('button.sendemail').prop('disabled', this.value.length <= 0);});
   $('.envelope form').submit(function () {send_mail(this);});
 });

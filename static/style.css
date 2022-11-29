@@ -223,9 +223,8 @@ div.logo {
   visibility: visible;
   opacity: 1;
 }
-button.sendemail {
+.envelope button {
   position: absolute;
-  bottom: 10px;
   right: 16px;
   width: 32px;
   height: 32px;
@@ -233,22 +232,34 @@ button.sendemail {
   background: none;
   cursor:pointer;
   transition: color 0.5s ease-in-out, text-shadow 0.5s ease-in-out;
+  z-index: 200;
 }
-button.sendemail:disabled {
+button.sendemail {
+  bottom: 10px;
+}
+button.closemail {
+  top: 10px;
+}
+.envelope button:disabled {
   color: #b957ce;
   text-shadow: 0 0 5px #b957ce;
   cursor: not-allowed;
 }
-button.sendemail {
+.envelope button {
   text-shadow: 0 0 5px #5994ce;
   color: #5994ce;
 }
-button.sendemail:enabled:hover, button.sendemail:enabled:focus {
+.envelope button:enabled:hover, .envelope button:enabled:focus {
   color: #41ff00;
   text-shadow: 0 0 5px #41ff00;
 }
-button.sendemail::after {
-  content: "\f1d8";
+.envelope button::after {
   font-family: "Font Awesome 6 Free";
   font-size: 32px;
+}
+button.sendemail::after {
+  content: "\f1d8";
+}
+button.closemail::after {
+  content: "\f057";
 }
