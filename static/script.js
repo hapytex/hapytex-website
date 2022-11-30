@@ -8,14 +8,14 @@ $(function () {
   function send_mail(form) {
     close_mail();
     const msg = form.elements['message'].value.trim();
-    if(msg) {
+    if(msg.length >= 16) {
         const match = msg.match(emailRegex);
         emailjs.send("service_bgcm91o","template_3fhqju7",{
             message: msg,
             from: Array.from(msg.matchAll(emailRegex)).join() || undefined
         });
+        form.reset();
     }
-    form.reset();
     $('button.sendemail').prop('disabled', true);
   }
   mail.html(function (_, html) {return html + "@" + window.location.hostname.replace(/^www./, '');});
