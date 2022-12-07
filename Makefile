@@ -2,12 +2,15 @@ jss = $(shell ls static/*.js)
 csss = $(shell ls static/*.css)
 htmls = $(shell ls static/*.html)
 svgs = $(shell ls static/*.svg)
+pngs = $(shell ls static/*.png)
+
 outjss = $(jss:static/%=out_/%)
 outcsss = $(csss:static/%=out_/%)
 outhtmls = $(htmls:static/%=out_/%)
 outsvgs = $(svgs:static/%=out_/%)
+outpngs = $(pngs:static/%=out_/%)
 
-all: out_ out_/CNAME /var/www/hapytex/ $(outjss) $(outcsss) $(outhtmls) $(outsvgs)
+all: out_ out_/CNAME /var/www/hapytex/ $(outjss) $(outcsss) $(outhtmls) $(outsvgs) $(outpngs)
 	cp -r out_/* /var/www/hapytex/
 
 install: /var/www/hapytex/
