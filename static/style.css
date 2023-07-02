@@ -274,16 +274,17 @@ button.closemail::after {
   animation-name: bounce;
   animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
   animation-iteration-count: infinite;
-  animation-duration: 4s;
+  animation-duration: 8s;
+  cursor: pointer;
 }
 
 
 @keyframes bounce {
     0%   { transform: scale(1,1)      translateY(0); }
-    5%  { transform: scale(1.1,.9)   translateY(0); }
-    15%  { transform: scale(.9,1.1)   translateY(-100px); }
-    25%  { transform: scale(1.05,.95) translateY(0); }
-    28.5%  { transform: scale(1,1)      translateY(-7px); }
-    32%  { transform: scale(1,1)      translateY(0); }
+    2.5%  { transform: scale(1.1,.9)   translateY(0); }
+    7.5%  { transform: scale(.9,1.1)   translateY(-100px); }
+    12.5%  { transform: scale(1.05,.95) translateY(0); }
+    14.25%  { transform: scale(1,1)      translateY(-7px); }
+    16%  { transform: scale(1,1)      translateY(0); }
     100% { transform: scale(1,1)      translateY(0); }
 }
