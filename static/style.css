@@ -276,6 +276,7 @@ button.closemail::after {
   animation-iteration-count: infinite;
   animation-duration: 2s;
 }
+
 @keyframes bounce {
     0%   { transform: scale(1,1)      translateY(0); }
     10%  { transform: scale(1.1,.9)   translateY(0); }
